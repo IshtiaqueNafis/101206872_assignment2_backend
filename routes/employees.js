@@ -1,20 +1,9 @@
 const express = require('express');
+const {getEmployees, createEmployee, getEmployee, updateEmployee, deleteEmployee} = require("../controllers/controllers");
 const router = express.Router();
 
+router.route('/').get(getEmployees).post(createEmployee);
 
-router.get('/', (req, res) => {
-    res.status(200).json();
-});
+router.route('/:id').get(getEmployee).put(updateEmployee).delete(deleteEmployee);
 
-router.post('/', (req, res) => {
-    res.status(200).json();
-});
-
-router.put('/:id', (req, res) => {
-    res.status(200).json();
-});
-
-router.delete('/:id', (req, res) => {
-    res.status(200).json();
-});
 module.exports = router;
