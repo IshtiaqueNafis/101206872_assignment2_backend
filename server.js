@@ -1,13 +1,16 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
-
+const connectDB = require('./config/db');
 //route files
 const employees = require('./routes/employees')
 
 //load config
-
 dotenv.config({path: './config/config.env'});
+
+//connect to database
+connectDB();
+
 
 
 
@@ -28,6 +31,14 @@ app.use('/employees', employees )
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(
+const server=  app.listen(
     PORT,
     console.log(`server Running in ${process.env.NODE_ENV} mode on port ${PORT}`));
+
+//handle unhandled rejections
+
+process.on('unhandledRejection',(error,promise)=>{
+    console.log(`Error: ${error.message}`);
+    //close server
+    server.close(()=>process.exit(1));
+})
