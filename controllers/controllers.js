@@ -2,13 +2,13 @@
 
 //region @desc get all employees,@route -->GET /employees @acess PUBLIC
 exports.getEmployees = (req, res, next) => {
-    res.status(200).json();
+    res.status(200).json({msg:'showing all employees'});
 }
 //endregion
 
 //region @desc get single employees,@route -->GET /employees/:id @acess PUBLIC
 exports.getEmployee = (req, res, next) => {
-    res.status(200).json();
+    res.status(200).json({msg:'showing all employees'});
 }
 //endregion
 
