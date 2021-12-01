@@ -1,5 +1,5 @@
 const express = require('express');
-const {getEmployees, createEmployee, getEmployee, updateEmployee, deleteEmployee} = require("../controllers/bootCampController");
+const {getEmployees, createEmployee, getEmployee, updateEmployee, deleteEmployee} = require("../controllers/EmployeeController");
 const router = express.Router();
 
 router.route('/').get(getEmployees).post(createEmployee);
