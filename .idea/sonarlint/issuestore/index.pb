@@ -13,3 +13,5 @@ B
 data/employee.json,c\a\cae279934467facc739965f0ca771c511e63e3d7
 A
 config/config.env,6\9\69eecf2a1e145d736da34f0069375dfc2801880d
+A
+package-lock.json,f\a\fa288d1472d29beccb489a676f68739ad365fc47

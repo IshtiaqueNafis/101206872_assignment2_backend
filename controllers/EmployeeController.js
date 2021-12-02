@@ -33,7 +33,7 @@ exports.getEmployee = async (req, res, next) => {
             })
         }
 
-        res.status(400).json({
+        res.status(200).json({
             success: true,
             data: employee
 
