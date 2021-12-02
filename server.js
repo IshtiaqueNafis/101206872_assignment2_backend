@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser')
 const connectDB = require('./config/db');
+const cors = require('cors');
 //route files
 const employees = require('./routes/employees');
 const login = require('./routes/authRoutes');
@@ -18,7 +19,8 @@ const app = express();
 //bodyparser
 
 app.use(express.json());
-app.use(cookieParser())
+app.use(cookieParser());
+app.use(cors());
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'));
 }
