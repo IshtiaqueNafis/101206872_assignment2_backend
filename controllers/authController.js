@@ -41,6 +41,17 @@ exports.LoginUser = async (req, res, next) => {
 
 //get token from model craate cookie and send response
 
+exports.logOutUser = async (req, res, next) => {
+
+ res.status(200).cookie('token',{expires: Date.now()}).json({
+     success:true,
+     data: [],
+
+ })
+
+
+}
+
 const sendResponse = (user, statusCode, res) => {
     const token = user.getSignedJWTToken();
 

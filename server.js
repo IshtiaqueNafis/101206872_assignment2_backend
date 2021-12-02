@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'development') {
 //mount routes
 
 app.use('/employees', employees)
-app.use('/employees', login)
+app.use('/admin', login)
 
 
 const PORT = process.env.PORT || 5000;
